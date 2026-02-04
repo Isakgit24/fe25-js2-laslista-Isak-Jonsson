@@ -1,4 +1,3 @@
-
 .heart {
     color: red;
 }
@@ -7,29 +6,15 @@
     border: 2px red solid;
 }
 
-#fav{
-      border: 2px green solid;
-    
-}
 
 .gameClass {
-      display: flex;
-    flex-direction: row;
-align-items: center;
-    justify-content:space-between;
-    flex-wrap: wrap;
- text-align: center;
- 
+    display: flex;
+    flex-direction: column;
+  flex-wrap: wrap;
+    text-align: center;
+
 }
 
-.hide {
-    display: none;
-}
-
-
-
-#gH1 {
+#gH1{
     text-align: center;
 }
-
-
