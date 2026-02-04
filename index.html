@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaks Game Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/91361ddcca.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Isaks Game Library <i class="fa-solid fa-gamepad"></i></h1>
+    <form>
+        <input type="text" name="Title" id="Title" placeholder="Title" />
+        <input type="text" name="Studio" id="Studio" placeholder="Studio" />
+
+        <button type="submit">Add Game</button>
+    </form>
+    <div id="sortFilter">
+        <label>Sort By</label>
+        <select name="" id="sort" autocomplete="off">
+            <option value="all" selected>All games</option>
+            
+            <option value="titleAz">Title: a-z</option>
+            <option value="titleZa">Title: z-a</option>
+
+            <option value="StudioAz">Studio: a-z</option>
+            <option value="studioZa">Studio: z-a</option>
+
+            <option value="firstToLast">First to last</option>
+            <option value="lastToFirst">Last to first</option>
+
+
+        </select>
+        <label>Filter By</label>
+        <select name="" id="filter" autocomplete="off">
+            <option value="all" selected>All games</option>
+            <option value="favorite">Only favorite</option>
+
+        </select>
+    </div>
+
+    <div id="iconDiv">
+        <p>Press <i class="fa-solid fa-trash "></i> to delete a game</p>
+        <p>press <i class="fa-regular fa-heart heart"></i> to favorite a game</p>
+        <p>press <i class="fa-solid fa-heart heart"></i> to unfavorite a game</p>
+    </div>
+
+    <h1 id="gH1">Games</h1>
+    <div class="gameClass">
+        <div id="games">
+
+        </div>
+
+
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
