@@ -1,6 +1,6 @@
 
 import { Game } from "./modules/gameClass.js"
-import { getAllGames, postGame, deleteGame,toggleFav } from "./modules/gamebase.js"
+import { getAllGames, postGame, deleteGame, toggleFav } from "./modules/gamebase.js"
 import { azOrder, filterFavAll, firstOrLast } from "./modules/filter.js"
 //flytta toggle och delete till gamebase
 //lägg till ränsning till fav
@@ -61,10 +61,10 @@ gameClass.addEventListener('click', async (e) => {
         const heartEl = heart.closest('.game');
         const gameId = heartEl.dataset.id;
         const gameFav = heartEl.dataset.favorite
-       // console.log(gameId)
+        // console.log(gameId)
         //console.log(typeof gameFav)
         await toggleFav(gameId, gameFav === 'true');
-        
+
         getAllGames()
             .then(addGame)
 
@@ -87,8 +87,9 @@ const addGame = data => {
 
 getAllGames()
     .then(addGame)
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
     e.preventDefault()
+   
     const formData = new FormData(form)
     console.log(formData.get('Title'))
     console.log(formData.get('Studio'))
@@ -98,10 +99,12 @@ form.addEventListener('submit', e => {
 
         formObj[key] = value;
     })
+   
     console.log(formObj)
-    postGame(formObj)
+   await postGame(formObj)
+    getAllGames()
+        .then(addGame)
 
-
-
+ form.reset()
 })
 
